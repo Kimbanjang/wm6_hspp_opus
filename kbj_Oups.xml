@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Window xmlns="http://www.chi-tai.info/BatteryStatus" imagesrc="kbj_Oups" version="1.0" mode="2" custombg="-1" gesture="0">
+
+	<!-- DISPLAY -->
+	<Row name="DISPLAY" rowtoggle="0" itemselect="1">
+
+		<!-- 1 Home -->
+		<View height="453" absolute="3" multi="1" animate="0">
+
+	    <Item class="registry_tracker" absolute="3" ontap="PhoneMissedCalls" onhold="DoN">
+			<image src="1Home\noti_missed%d.png" absolute="3" left="0" top="20" width="80" height="93" />
+			    <registry key_value="HKCU\System\State\Phone\Missed Call Count" />
+	    </Item>
+
+		<!-- Calenda -->
+		<image src="1home\calenda_bg.png" left="295" top="10" width="175" height="137" />
+
+		<Item class="date" ontap="DoN" onhold="DoN">
+			<label text="yyyy.MM.dd" type="value" color="ffffff" fontsize="34" left="296" top="8" width="174" height="34" align="center" />
+	    </Item>
+
+		<Item class="clock_digit" optap="DoN" onhold="DoN">
+			<image left="304" top="49" />
+	    </Item>
+		<Item class="clock_digit" optap="DoN" onhold="DoN">
+			<image left="334" top="49" />
+	    </Item>  
+		<Item class="clock_seperator" optap="DoN" onhold="DoN">
+			<image left="364" top="49" />
+	    </Item>
+		<Item class="clock_digit" optap="DoN" onhold="DoN">
+			<image left="382" top="49" />
+	    </Item>
+		<Item class="clock_digit" optap="DoN" onhold="DoN">
+			<image left="412" top="49" />
+	    </Item>
+		<Item class="clock_apm" optap="DoN">
+			<image left="444" top="73" />
+	    </Item>
+
+		<Item class="date" ontap="DoN" onhold="DoN">
+			<label text="ddd" type="value" color="ffffff" fontsize="25" left="442" top="48" width="24" height="25" align="center" />
+	    </Item>
+
+		<!-- Weather -->
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="%s" fontsize="28" left="294" top="105" height="30" width="70" align="center" >
+				<registry key_value="HKCU\Software\NotME\yWeather\Location" />
+			</label>
+	    </Item>
+		<Item class="registry_tracker" ontap="StartApp" path="Script\yWeather3G.mscr" onhold="StartApp" path1="Script\yweathersetcity.mscr">
+			<image src="Weather\yWS%s.png" left="358" top="105" width="40" height="40" />
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast1\Icon" />
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="%s" fontsize="25" left="400" top="111" height="20" width="30" align="center">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast1\Temp High" />
+			</label>
+		</Item>
+		<Item class="space" type="value" ontap="DoN" onhold="Don">
+			<label text="/" fontsize="25" bold="1" left="430" top="111" height="20" width="6" align="center" />
+        </Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="%s" fontsize="25" left="436" top="111" height="20" width="30" align="center">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast1\Temp Low" />
+			</label>
+		</Item>
+
+		<!-- DockTAP -->
+		<Item class="space" type="icon" absolute="3" ontap="DoN">
+			<image src="6Dock\head1.png" absolute="3" left="0" top="633" width="96" height="23" />
+		</Item>
+
+		</View>
+		<!-- /1 Home  -->
+
+		<!-- 2 Schedule -->
+		<View height="632" absolute="3" multi="1" animate="100">
+		<image src="2Schedule\Schedule_bg.png" absolute="3" left="5" top="10" width="470" height="610" />
+
+		<!-- Plugin -->
+		<Item class="tPlug" title="calendar_for_pokeP" cachebg="1" ontap="DoN" onhold="DoN">
+			<label align="center" valign="top" left="28" top="30" width="205" />
+	    </Item>
+		<Item class="tPlug" title="&quot;TodayAgenda&quot;" cachebg="1" ontap="DoN" onhold="DoN">
+			<label align="center" valign="top" left="25" top="260" width="427" height="270" />
+	    </Item>
+
+		<!-- D-Day Script -->
+		<Item class="registry_tracker" ontap="DoN" onhold="StartApp" path1="Script\D-Day-Set.mscr">
+			<label text="%s" fontsize="32" left="257" top="14" width="220" height="50" align="left">
+				<registry key_value="HKCU\Software\Mort_D-Day\1-DDayName" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="StartApp" path1="Script\D-Day-Delete.mscr">
+			<label text="%s" fontsize="26" left="237" top="61" width="220" height="35" align="right">
+				<registry key_value="HKCU\Software\Mort_D-Day\1-DDay" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="StartApp" path1="Script\D-Day-Set.mscr">
+			<label text="%s" fontsize="32" left="257" top="93" width="220" height="50" align="left">
+				<registry key_value="HKCU\Software\Mort_D-Day\2-DDayName" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="StartApp" path1="Script\D-Day-Delete.mscr">
+			<label text="%s" fontsize="26" left="237" top="140" width="220" height="35" align="right">
+				<registry key_value="HKCU\Software\Mort_D-Day\2-DDay" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="StartApp" path1="Script\D-Day-Set.mscr">
+			<label text="%s" fontsize="32" left="257" top="172" width="220" height="50" align="left">
+				<registry key_value="HKCU\Software\Mort_D-Day\3-DDayName" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="StartApp" path1="Script\D-Day-Delete.mscr">
+			<label text="%s" fontsize="26" left="237" top="219" width="220" height="35" align="right">
+				<registry key_value="HKCU\Software\Mort_D-Day\3-DDay" />
+			</label>
+		</Item>
+
+		<!-- Weather -->
+		<Item class="registry_tracker" ontap="StartApp" path="Script\yWeather3G.mscr" onhold="StartApp" path1="Script\yweathersetcity.mscr">
+			<label text="%s" fontsize="28" left="15" top="573" height="30" width="85" align="center" >
+				<registry key_value="HKCU\Software\NotME\yWeather\Location" />
+			</label>
+	    </Item>
+		<Item class="space" type="value" ontap="DoN" onhold="Don">		
+			<label text="오늘" fontsize="18" left="106" top="570" height="20" width="30" />
+		</Item>		
+		<Item class="registry_tracker" ontap="Don" onhold="Don">
+			<image src="Weather\yWS%s.png" left="132" top="575" width="35" height="35" />
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast1\Icon" />
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="↑ %s" fontsize="25" left="174" top="568" height="25" width="42" align="left">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast1\Temp High" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="↓ %s" fontsize="25" left="174" top="587" height="25" width="42" align="left">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast1\Temp Low" />
+			</label>
+		</Item>
+		<Item class="space" type="value" ontap="DoN" onhold="Don">		
+			<label text="내일" fontsize="18" left="228" top="570" height="20" width="30" />
+		</Item>		
+		<Item class="registry_tracker" ontap="Don" onhold="Don">
+			<image src="Weather\yWS%s.png" left="254" top="575" width="35" height="35" />
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast2\Icon" />
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="↑ %s" fontsize="25" left="296" top="568" height="25" width="42" align="left">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast2\Temp High" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="↓ %s" fontsize="25" left="296" top="587" height="25" width="42" align="left">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast2\Temp Low" />
+			</label>
+		</Item>		<Item class="space" type="value" ontap="DoN" onhold="Don">		
+			<label text="모레" fontsize="18" left="350" top="570" height="20" width="30" />
+		</Item>		
+		<Item class="registry_tracker" ontap="Don" onhold="Don">
+			<image src="Weather\yWS%s.png" left="376" top="575" width="35" height="35" />
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast3\Icon" />
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="↑ %s" fontsize="25" left="418" top="568" height="25" width="42" align="left">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast3\Temp High" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="↓ %s" fontsize="25" left="418" top="587" height="25" width="42" align="left">
+				<registry key_value="HKCU\Software\NotME\yWeather\forecast3\Temp Low" />
+			</label>
+		</Item>
+
+		<!-- DockTAP -->
+		<Item class="space" type="icon" absolute="3" ontap="DoN">
+			<image src="6Dock\head2.png" absolute="3" left="96" top="633" width="96" height="23" />
+		</Item>
+
+		</View>
+		<!-- /2 Schedule -->
+
+		<!-- 3 Programs -->
+		<View height="632" absolute="3" multi="1" animate="0">
+		<image src="3Programs\Programs_bg.png" absolute="3" left="5" top="10" width="470" height="610" />
+
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\PhatPad\PhatPad.exe" onhold="DoN">
+			<image src="3Programs\p_01.png" left="14" top="24" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\WikiNote\WikiNote.exe" onhold="DoN">
+			<image src="3Programs\p_02.png" left="127" top="24" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\ListPro\ListPro.exe" onhold="DoN">	
+			<image src="3Programs\p_03.png" left="240" top="24" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\VITO\AudioNotes\AudioNotes.exe" onhold="DoN">
+			<image src="3Programs\p_04.png" left="353" top="24" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Spb Finance\SpbFinance.exe" onhold="DoN">
+			<image src="3Programs\p_05.png" left="14" top="143" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Chekview\Chekview.exe" onhold="DoN">
+			<image src="3Programs\p_06.png" left="127" top="143" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\iSilo\iSilo\iSilo.exe" onhold="DoN">
+			<image src="3Programs\p_07.png" left="240" top="143" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\ageye\G-Watch\GWatch.exe" onhold="DoN">
+			<image src="3Programs\p_08.png" left="353" top="143" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Octopus Studio\MDict\MDict.exe" onhold="DoN">
+			<image src="3Programs\p_09.png" left="14" top="262" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Drasys\PocketHanja\PocketHanja.exe" onhold="DoN">
+			<image src="3Programs\p_10.png" left="127" top="262" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\MemoBank\MemoBank.exe" onhold="DoN">
+			<image src="3Programs\p_11.png" left="240" top="262" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="Script\memobank tts.mscr" onhold="DoN">
+			<image src="3Programs\p_12.png" left="353" top="262" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\CorePlayer\player.exe" onhold="DoN">
+			<image src="3Programs\p_13.png" left="14" top="381" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Windows\FMRadio.exe" onhold="DoN">
+			<image src="3Programs\p_14.png" left="127" top="381" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Pocket Player\pocketplayer.exe" onhold="DoN">
+			<image src="3Programs\p_15.png" left="240" top="381" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" ontap="StartApp" path="\Program Files\Nitrogen\Nitrogen.exe" onhold="DoN">
+			<image src="3Programs\p_16.png" left="353" top="381" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Windows\htcCalculator.exe" onhold="DoN">
+			<image src="3Programs\p_17.png" left="14" top="500" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Gbus\GBus.exe" onhold="DoN">
+			<image src="3Programs\p_18.png" left="127" top="500" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\GpsCycleComputer\GpsCycleComputer.exe" onhold="DoN">
+			<image src="3Programs\p_19.png" left="240" top="500" width="113" height="110" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\Mappy\Mappy.exe" onhold="DoN">
+			<image src="3Programs\p_20.png" left="353" top="500" width="113" height="110" />
+		</Item>
+
+		<!-- DockTAP -->
+		<Item class="space" type="icon" absolute="3" ontap="DoN">
+			<image src="6Dock\head3.png" absolute="3" left="192" top="633" width="96" height="23" />
+		</Item>
+
+		</View>
+		<!-- /3 Programs -->
+
+		<!-- 4 Games -->
+		<View height="632" absolute="3" multi="1" animate="0">
+		<image src="4Games\Games_bg.png" absolute="3" left="5" top="10" width="470" height="547" />
+
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Azgard Defence\td.exe" onhold="DoN">
+			<image src="4Games\g_01.png" left="14" top="51" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Astraware\Bejeweled2\bejeweled2.exe" onhold="DoN">
+			<image src="4Games\g_02.png" left="241" top="51" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Ganondolf\CrayonPhysics\CrayonPhysics.exe" onhold="DoN">
+			<image src="4Games\g_03.png" left="14" top="102" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Towers Of Glennoi\TowersOfHanoi.exe" onhold="DoN">
+			<image src="4Games\g_04.png" left="241" top="102" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Glu\LEMMINGS TRIBES\lemmingstribes.exe" onhold="DoN">
+			<image src="4Games\g_05.png" left="14" top="153" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Panoramic\Sudoku\Sudoku.exe" onhold="DoN">
+			<image src="4Games\PanoramicSudoku.png" left="241" top="153" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\TikiTowers\mrgame.exe" onhold="DoN">
+			<image src="4Games\g_06.png" left="14" top="204" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Tower Defense\Tower Defense.exe" onhold="DoN">
+			<image src="4Games\g_07.png" left="241" top="204" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Tower Wars\tow.exe" onhold="DoN">
+			<image src="4Games\g_08.png" left="14" top="255" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\게임\TowersTrap\TowersTrap.exe" onhold="DoN">
+			<image src="4Games\g_09.png" left="241" top="255" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Glu\Bal\bal.exe" onhold="DoN">
+			<image src="4Games\g_10.png" left="14" top="337" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Astraware\Insaniquarium Deluxe\InsaniquariumDeluxe.exe" onhold="DoN">		
+			<image src="4Games\g_11.png" left="241" top="337" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\게임\Simcity2000\Simcity.exe" onhold="DoN">			
+			<image src="4Games\g_12.png" left="14" top="388" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Program Files\Astraware\Tradewinds 2\Tradewinds2.exe" onhold="DoN">
+			<image src="4Games\g_13.png" left="241" top="388" width="225" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Storage Card\Games\scummvm\scummvmK.exe" onhold="DoN">
+			<image src="4Games\g_14.png" left="14" top="470" width="225" height="50" />
+		</Item>
+
+		<!-- DockTAP -->
+		<Item class="space" type="icon" absolute="3" ontap="DoN">
+			<image src="6Dock\head4.png" absolute="3" left="288" top="633" width="96" height="23" />
+		</Item>
+
+		</View>
+		<!-- /4 Games -->
+
+		<!-- 5 Setting -->
+		<View height="632" absolute="3" multi="1" animate="0">
+		<image src="5Setting\Setting_bg.png" absolute="3" left="5" top="10" width="470" height="578" />
+
+		<!-- 볼륨 컨트롤러 -->
+		<Item class="registry_tracker" ontap="StartApp" path="Script\BsSound.exe" onhold="DoN">
+	        <image src="5Setting\vol%s.png" left="14" top="19" width="452" height="50" />
+		    <registry key_value="HKCU\ControlPanel\Sounds\RingTone0\Sound" />
+	    </Item>
+		<!-- 알람 -->
+		<Item class="registry_tracker" ontap="StartApp" path="\Program Files\pTravelAlarm\pTravelAlarm.exe" onhold="DoN">
+			<image src="5Setting\Alarm%d.png" left="14" top="70"  width="452" height="50" />
+			<registry key_value="HKLM\Software\BurrOak\pTravelAlarm\Alarms\0\AlarmOn" mask="0x1" />
+	    </Item>
+		<!-- 와이파이 -->
+		<Item class="registry_tracker" ontap="ToggleWiFi" onhold="MenuWiFi">
+			<image src="5Setting\Wifi%d.png" left="14" top="121" width="452" height="50" />
+			<registry key_value="HKLM\Software\Drivers\WLAN\WlanStatus" mask="0x1" />
+	    </Item>
+		<!-- 블루투스 -->
+		<Item class="registry_tracker" ontap="ToggleBluetooth" onhold="MenuBluetooth">
+	        <image src="5Setting\Bluetooth%d.png" left="14" top="172" width="452" height="49" />
+	        <registry key_value="HKLM\System\State\Hardware\Bluetooth" mask="0x1" />
+	    </Item>
+
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Windows\AudioBooster.exe" onhold="DoN">
+			<image src="5Setting\equalizer.png" left="14" top="222" width="452" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Windows\QuickGPS.exe" onhold="DoN">
+			<image src="5Setting\quickgps.png" left="14" top="273" width="452" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="Script\link_TweakTools.lnk" onhold="DoN">
+			<image src="5Setting\tweak.png" left="14" top="324" width="452" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Windows\taskmgr.exe" onhold="CtlPnl" index1="4">
+			<image src="5Setting\taskmgr.png" left="14" top="375" width="452" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\htcAddicts cleanRAM\htcAddicts_cleanRAM.exe" onhold="StartApp" path1="\Program Files\htcAddicts cleanRAM\htcAddicts_cleanRAM_Config.exe">
+			<image src="5Setting\cleanner.png" left="14" top="426" width="452" height="50" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="StartApp" path="\Program Files\SPB Backup\SPBBackup.exe" onhold="DoN">
+			<image src="5Setting\backup.png" left="14" top="477" width="452" height="50" />
+		</Item>
+
+		<Item class="powerdrain" type="value" ontap="DoN" onhold="DoN">
+			<label left="30" top="551" fontsize="25" height="26" width="80" align="center" color="e0e0e0" />
+	    </Item>
+		<Item class="memory_program" type="value" ontap="DoN" onhold="DoN">
+			<label left="147" top="551" fontsize="25" height="26" width="70" align="center" color="e0e0e0" />
+	    </Item>
+		<Item class="memory_data" type="value" ontap="DoN" onhold="DoN">
+			<label left="262" top="551" fontsize="25" height="26" width="70" align="center" color="e0e0e0" />
+	    </Item>
+	    <Item class="memory_sdcard" type="value" ontap="DoN" onhold="DoN">
+			<label left="377" top="551" fontsize="25" height="26" width="70" align="center" color="e0e0e0" />
+	    </Item>
+
+		<!-- DockTAP -->
+		<Item class="space" type="icon" absolute="3" ontap="DoN">
+			<image src="6Dock\head5.png" absolute="3" left="384" top="633" width="96" height="23" />
+		</Item>
+
+		</View>
+		<!-- /5 Setting -->
+
+	</Row>
+	<!-- /DISPLAY -->
+
+
+	<!-- SWITCH -->
+	<Row name="SWITCH" rowtoggle="0" itemselect="1">
+
+		<!-- 1 HomeView -->
+		<View height="180" absolute="3" multi="1" animate="0">
+
+	    <Item class="registry_tracker" absolute="3" ontap="View" index="1" subindex="1" onhold="InboxSms">
+		    <image src="1Home\noti_sms%d.png" absolute="3" left="14" top="1" width="100" height="60" />
+	        <label text="%d" suppress0="1" left="76" top="29" width="32" height="32" fontsize="28" bold="1" align="center" color="ffffff">
+		        <registry key_value="HKCU\System\State\Messages\SMS\Unread\Count" />
+	        </label>
+	    </Item>
+	    <Item class="registry_tracker" absolute="3" ontap="DoN" onhold="StartApp" path1="\Windows\MMSC.exe">
+		    <image src="1Home\noti_mms%d.png" absolute="3" left="14" top="71" width="100" height="60" />
+	        <label text="%d" suppress0="1" left="76" top="99" width="32" height="32" fontsize="28" bold="1" align="center" color="ffffff">
+		        <registry key_value="HKLM\System\State\Messages\SMS\Unread\Count" />
+	        </label>
+	    </Item> 
+
+		<!-- 버그 방지 -->
+		<Item class="space" type="value" ontap="DoN" onhold="DoN">
+			<label text=" " suppress0="1" left="1" top="1" fontsize="28" width="32" />
+        </Item>   
+
+		</View>
+		<!-- /1 HomeView -->
+
+		<!-- 2 QuickSMS -->
+		<View height="180" absolute="3" multi="1" animate="0">
+
+		<image src="1Home\sms_bg.png" left="0" top="20" width="480" height="154" />
+
+		<Item class="space" ontap="View" index="1" subindex="0" onhold="InboxSms">
+			<image src="1Home\sms_reply.png" left="14" top="1" width="75" height="60" />
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<label text="%s" fontsize="32" left="105" top="21" width="250" height="32" align="left">
+				<registry key_value="HKLM\Software\ThrottleLauncher\Messaging\SMS\Sender" />
+			</label>
+		</Item>
+		<Item class="space" ontap="InboxSms" onhold="DoN">
+			<image src="1Home\sms_tmail.png" left="393" top="24" width="34" height="34" />
+		</Item>
+		<Item class="space" ontap="StartApp" path="\Program FIles\Message2Reg\HSMS Refresh.mscr" onhold="DoN">
+			<image src="1Home\sms_update.png" left="432" top="24" width="34" height="34" />
+		</Item>
+
+		<image src="1Home\sms_lcd.png" left="14" top="74" width="72" height="34" />
+		<Item class="registry_tracker" ontap="DoN" >
+			<label text="%s" left="14" top="72" fontsize="32" width="72" height="32" align="center">
+				<registry key_value="HKLM\Software\ThrottleLauncher\Messaging\SMS\Selected" />
+			</label>
+		</Item>  
+		<Item class="space" ontap="StartApp" path="\Program FIles\Message2Reg\HSMS Previous.mscr" onhold="DoN">
+			<image src="1Home\sms_previous.png" left="14" top="112" width="34" height="55" />
+		</Item> 
+		<Item class="space" ontap="StartApp" path="\Program FIles\Message2Reg\HSMS Next.mscr" onhold="DoN">
+			<image src="1Home\sms_next.png" left="52" top="112" width="34" height="55" />
+		</Item>		
+
+		<Item class="registry_tracker" ontap="StartApp" path="\Program FIles\Message2Reg\HSMS Reply.mscr" onhold="DoN">
+			<label text="%s" left="109" top="68" fontsize="31" width="350" height="92" align="left" valign="top" format="wordbreak">
+				<registry key_value="HKLM\Software\ThrottleLauncher\Messaging\SMS\Subject" />
+			</label>
+		</Item>
+		<Item class="registry_tracker" ontap="DoN" onhold="DoN">
+			<image src="1Home\sms_new%d.png" left="430" top="151" width="32" height="16" />
+			<registry key_value="HKLM\Software\ThrottleLauncher\Messaging\SMS\ReadFlag" />
+		</Item>
+
+		<!-- 버그 방지 -->
+		<Item class="space" type="value" ontap="DoN" onhold="DoN">
+			<label text=" " suppress0="1" left="1" top="1" fontsize="28" width="32" />
+        </Item>   
+
+		</View>
+		<!-- /2 QuickSMS -->
+
+		<!-- 3 Empty -->
+		<View height="1" absolute="3" multi="1" animate="0">
+
+		<Item class="space" type="value" ontap="DoN" onhold="DoN">
+			<label text=" " suppress0="1" left="1" top="1" fontsize="28" width="32" />
+        </Item>    
+
+		</View>
+		<!-- /3 Empty -->
+
+	</Row>
+	<!-- /SWITCH -->
+
+
+	<!-- DOCK -->
+	<Row name="DOCK" rowtoggle="0" itemselect="1">
+		<View height="114" absolute="3" multi="1">
+
+		<Item class="space" type="icon" absolute="3" ontap="View" index="0" subindex="0" index_1="1" subindex_1="0" onhold="DoN">
+			<image src="6Dock\1.png" absolute="3" left="0" top="10" width="96" height="105" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="View" index="0" subindex="1" index_1="1" subindex_1="2" onhold="StartApp" path1="\Program Files\Pocket Agenda\Pocket Agenda.exe">
+			<image src="6Dock\2.png" absolute="3" left="96" top="10" width="96" height="105" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="View" index="0" subindex="2" index_1="1" subindex_1="2" onhold="DoN">
+			<image src="6Dock\3.png" absolute="3" left="192" top="10" width="96" height="105" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="View" index="0" subindex="3" index_1="1" subindex_1="2" onhold="DoN">
+			<image src="6Dock\4.png" absolute="3" left="288" top="10" width="96" height="105" />
+		</Item>
+		<Item class="space" type="icon" absolute="3" ontap="View" index="0" subindex="4" index_1="1" subindex_1="2">
+			<image src="6Dock\5.png" absolute="3" left="384" top="10" width="96" height="105" />
+		</Item>
+
+		</View>
+	</Row>
+	<!-- /DOCK -->
+
+
+</Window> 
